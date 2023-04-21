@@ -1,0 +1,71 @@
+"""
+Pathfinder is a (single-player) tile placement game written in Kivy with the intention on one day being developed into my first mobile game.  The game is set on an eight-by-eight grid.  Each turn a fresh tile is dealt onto a pile of five tile from which draw.  Each tile contains one of five terrains.  A tile may be placed on the board adjacent to any previously laid tile on the condition that its terrain matches the terrain of the map square upon which it is being place.  The objective the of the game is to find a path dominos-style to various treasures randomly placed on the map grid.  At the end of the sixteen turns, the game it over.
+"""
+
+
+# Import Kivy library
+
+# Create the Layout
+"""
+Creates an eight by eight grid using the Kivy GridLayout.
+"""
+
+# Interface
+"""
+Creates a box layout at the top of the screen to display the score and the top three tiles.
+"""
+
+# Create the tiles
+"""
+Creates the tiles as Kivy buttons or images. Each tile should have a unique identifier and an image.
+"""
+
+# Shuffle the tiles
+"""
+Use the random module to shuffle the tiles randomly. You can also use the built-in Python shuffle function to shuffle the list of tiles.
+"""
+
+# Display the top three tiles
+"""
+Use a Python slice operator to get the top three tiles from the list of shuffled tiles. You can then display the top three tiles on the box layout at the top of the screen.
+"""
+
+# Drag and drop
+"""
+Implement the Kivy drag and drop feature to enable the player to drag and drop the tiles onto the grid.
+"""
+
+# Undo function
+"""
+Implement an undo function to allow the player to undo their moves.
+"""
+
+# Scoring
+"""
+Create a scoring system for the game. The score should increase every time the player places a tile on the grid.
+"""
+
+# End of game
+"""
+Implements an end game function to determine when the game is over. 
+The game can be over when all tiles have been placed on the grid or when the player has used no further moves.
+"""
+
+# Sound effects and animations
+"""
+Adds sound effects and animations to make the game more engaging and interactive.
+"""
+
+# Menu
+"""
+Create a new window with player options
+"""
+
+# New Game
+# High Scores
+# Rules
+# Sound
+# Quit
+
+
+
