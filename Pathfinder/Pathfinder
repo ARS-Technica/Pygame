@@ -82,10 +82,27 @@ Implement an undo function to allow the player to undo their moves.
 """
 
 # Scoring
-"""
-Create a scoring system for the game. The score should increase every time the player places a tile on the grid.
-"""
-
+def init_score_board():
+    """
+    Create a scoring system for the game. The score should increase every time the player places a tile on the grid.
+    
+    This function initializes a BoxLayout with a horizontal orientation and a
+    fixed height of 50. It also creates two ObjectProperty attributes, score
+    and top_tiles, which are set to None. The function then returns the
+    initialized score board.
+    """
+    # Create a new BoxLayout to hold the score and top tiles labels
+    score_board = BoxLayout(orientation="horizontal", 
+                            size_hint=(1, None),
+                            height=50)
+    # Create ObjectProperty instances for the score and top tiles labels
+    score = ObjectProperty(None)
+    top_tiles = ObjectProperty(None)
+    
+    # Return the score board object
+    return score_board
+    
+   
 # End of game
 """
 Implements an end game function to determine when the game is over. 
