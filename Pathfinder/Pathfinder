@@ -1,4 +1,5 @@
 
+
 """
 Pathfinder is a (single-player) tile placement game written in Kivy with the 
 intention on one day being developed into my first mobile game.  The game is 
@@ -11,22 +12,34 @@ randomly placed on the map grid.  At the end of the sixteen turns, the game it o
 """
 
 
-# Import Kivy library
+import kivy
 from kivy.app import App
+from kivy.lang import Builder
+from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
+from kivy.properties import ObjectProperty
+import random
 
 # Create the Layout
-def game_grid():
+def init_game_grid():
     """
     Creates an eight by eight grid using the Kivy GridLayout.
     """
-
-    layout = BoxLayout(orientation="vertical", spacing=10, 
-                       size_hint=(1, 1),
-                       pos_hint={'center_x': .5, 'center_y': .5},
-                       children=[Button() for i in range(64)])
-    return layout
+    
+    # create a new GridLayout with 8 columns and 8 rows
+    grid = GridLayout(cols=8, rows=8)
+    # initialize some attributes for the grid
+    grid.tiles = []
+    grid.moves = []
+    grid.score = 0
+    grid.top_tiles = []
+    grid.itemBeingDragged = None
+    grid.touchedSquareY = None
+    grid.touchedSquareX = None
+    
+    # return the grid object
+    return grid
 
 # Interface
 """
@@ -86,11 +99,15 @@ Create a new window with player options
 # Quit
 
 # Execute Code
-class TileGameApp(App):
-    def build(self):
-        return game_grid()
+def main():
+    """
+    This function calls init_tile_game() to create the game layout and then
+    runs the TileGame() application using Kivy's run() function.
+    """
+
+    game = init_tile_game()
+    TileGame().run()
 
 
-if __name__ == "__main__":
-    TileGameApp().run()   
-
+if __name__ == '__main__':
+    main()
